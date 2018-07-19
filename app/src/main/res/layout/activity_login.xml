@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="login"
+            type="com.example.unsan.mvvmretrofiteg.viewModel.LoginModel"></variable>
+        <variable
+            name="userloginevent"
+            type="com.example.unsan.mvvmretrofiteg.presenter.userLogin"></variable>
+
+    </data>
+
+
+
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:hint="@{login.emalHint}"
+        android:text="@={login.email}"
+        app:layout_constraintStart_toStartOf="@+id/editText2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="57dp"
+        android:text="@={login.pwd}"
+
+        android:hint="@{login.pwdHint}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="133dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:text="Login"
+        android:onClick="@{(v)->userloginevent.onClickLogin()}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/editText2" />
+
+</android.support.constraint.ConstraintLayout>
+</layout>
